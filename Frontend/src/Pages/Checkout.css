@@ -1,0 +1,171 @@
+/* Checkout.css - Stripe Checkout Page Styles */
+
+/* Main checkout container */
+.checkout-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.checkout-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text);
+    font-size: 2rem;
+}
+
+/* Checkout form layout */
+.checkout-form {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    align-items: flex-start; /* Prevents cards from stretching to match height */
+}
+
+/* 
+   ORDER SUMMARY
+     */
+.order-summary {
+    flex: 1;
+    min-width: 280px;
+    background-color: var(--surface);
+    padding: 25px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.order-summary h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.summary-items-list {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding-right: 5px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 1rem;
+    color: var(--text-muted);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.summary-item:last-child {
+    border-bottom: none;
+}
+
+.summary-qty {
+    color: var(--accent);
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 20px;
+    border-top: 2px solid var(--border);
+    font-size: 1.2em;
+    color: var(--text-muted);
+}
+
+.total-price {
+    font-size: 1.4em;
+    color: var(--accent-hover);
+}
+
+/* PAYMENT SECTION */
+.payment-section {
+    flex: 1;
+    min-width: 320px;
+    background-color: var(--surface);
+    padding: 25px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.payment-section h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Wraps the Stripe iframe */
+.stripe-element-wrapper {
+    margin-bottom: 25px;
+}
+
+/* Pay button */
+.pay-button {
+    width: 100%;
+    background-color: hsl(180, 100%, 10%);
+    color: var(--accent);
+    border: none;
+    padding: 16px 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    border: 1px solid teal;
+    border-radius: var(--radius);
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.2s ease;
+}
+
+.pay-button:hover:not(:disabled) {
+    background-color: var(--accent);
+    color: var(--text);
+    transform: scale(1.05);
+}
+
+.pay-button:active:not(:disabled) {
+    background-color: var(--accent-hover);
+    color: var(--bg); 
+    transform: scale(1.1);
+}
+
+.pay-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Back to Cart link (Inside the error state) */
+.shop-now-link {
+    display: inline-block;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.shop-now-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .checkout-form {
+        flex-direction: column;
+    }
+    
+    .order-summary, .payment-section {
+        width: 100%;
+    }
+}

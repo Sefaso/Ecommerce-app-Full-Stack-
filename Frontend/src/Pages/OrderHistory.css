@@ -1,0 +1,235 @@
+/* OrderHistory.css - Order History Page Styles */
+
+/* Main container */
+.order-history-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.order-history-title {
+    color: var(--text);
+    margin-bottom: 30px;
+    font-size: 2rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 15px;
+}
+
+/* Orders list container */
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Individual order card */
+.order-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background-color: var(--surface);
+    box-shadow: var(--shadow);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Start Shopping Link */
+.shop-now-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.15s ease;
+}
+
+.shop-now-link:hover {
+    color: var(--accent-hover);
+    transform: scale(1.05);
+}
+
+.order-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Clickable order header */
+.order-header {
+    padding: 20px;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    transition: background-color 0.2s ease;
+}
+
+.order-header:hover {
+    background-color: hsl(180, 100%, 5%);
+    /* Subtle hover effect */
+}
+
+.order-header:active {
+    background-color: hsl(180, 100%, 10%);
+    /* Subtle hover effect */
+}
+
+/* Order info group (number, date, status) */
+.order-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.order-number {
+    font-weight: bold;
+    color: var(--text);
+    font-size: 1.15em;
+}
+
+.order-date {
+    color: var(--text-muted);
+    font-size: 0.95em;
+}
+
+/* Order total amount */
+.order-total {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--accent);
+    /* Teal price */
+}
+
+/* ============================================================
+   STATUS BADGES (Modern outline style for dark mode)
+   ============================================================ */
+.order-status {
+    padding: 5px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+}
+
+.order-status.pending {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: #ffc107;
+    border-color: #ffc107;
+}
+
+.order-status.processing {
+    background-color: rgba(23, 162, 184, 0.1);
+    color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.order-status.shipped {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+    border-color: #3b82f6;
+}
+
+.order-status.delivered {
+    background-color: rgba(40, 167, 69, 0.15);
+    color: #28a745;
+    border-color: #28a745;
+}
+
+.order-status.cancelled {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+.order-status.default {
+    background-color: rgba(108, 117, 125, 0.1);
+    color: #6c757d;
+    border-color: #6c757d;
+}
+
+/* Expandable order items section */
+.order-items {
+    padding: 20px;
+    border-top: 1px solid var(--border);
+    background-color: var(--bg);
+    /* Darker background to separate it from header */
+}
+
+.order-items h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+/* Order items table */
+.order-items-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order-items-table th,
+.order-items-table td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+}
+
+.order-items-table th {
+    font-weight: bold;
+    color: var(--text-muted);
+    font-size: 0.9em;
+}
+
+.order-items-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* No orders state */
+.no-orders {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--surface);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+}
+
+.no-orders p {
+    font-size: 1.1em;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .order-info {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .order-total {
+        width: 100%;
+        text-align: right;
+    }
+
+    .order-items-table {
+        font-size: 0.85em;
+    }
+
+    .order-items-table th,
+    .order-items-table td {
+        padding: 10px 5px;
+    }
+}

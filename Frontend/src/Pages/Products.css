@@ -1,0 +1,158 @@
+/* Products.css - Product Listing Page Styles */
+
+/* Main container */
+.products-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.products-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: hsl(180, 100%, 33%);
+    font-size: 2.5rem;
+}
+
+/* Loading and error states */
+.products-status {
+    text-align: center;
+    padding: 50px;
+    font-size: 1.2em;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: var(--radius);
+}
+
+.products-status.loading {
+    color: var(--text-muted);
+}
+
+.products-status.error {
+    background-color: rgba(220, 38, 38, 0.1); /* Faint red */
+    color: var(--danger);
+    border: 1px solid var(--danger);
+}
+
+/* Products grid layout */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* Individual product card */
+.product-card {
+    display: flex;
+    flex-direction: column; /* Pushes the button to the bottom */
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 15px;
+    background-color: var(--surface);
+    box-shadow: var(--shadow);
+    transition: all 0.2s ease;
+}
+
+.product-card:hover {
+    background-color: hsl(180, 100%, 10%);
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 1);
+    border-color: var(--accent-hover); /* Teal highlight on hover */
+}
+
+/* Product image */
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: calc(var(--radius) - 2px);
+    margin-bottom: 15px;
+    background-color: var(--bg); /* Fallback for loading images */
+}
+
+/* Info wrapper - grows to fill space so button stays at bottom */
+.product-info {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* Product title */
+.product-name {
+    margin: 0 0 8px 0;
+    font-size: 1.15em;
+    color: hsl(180, 25%, 50%);
+    font-weight: 600;
+}
+
+/* Product description */
+.product-description {
+    color: hsl(0, 10%, 75%);
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin: 0 0 15px 0;
+    
+    /* Keeps description to 2 lines maximum */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Product price */
+.product-price {
+    font-size: 1.4em;
+    color: hsl(180, 25%, 50%); /* Teal price */
+    font-weight: bold;
+    margin: auto 0 15px 0; /* Pushes price down */
+}
+
+/* View details button */
+.product-link {
+    text-decoration: none; /* Removes underline from the Link wrapper */
+    width: 100%;
+}
+
+.view-details-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: hsl(180, 100%, 10%);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.view-details-btn:hover {
+    background-color: var(--accent);
+    color: var(--text); /* Swaps text to dark when background fills with teal */
+    transform: scale(1.025);
+}
+
+.view-details-btn:active {
+    background-color: var(--accent-hover);
+    color: var(--bg); /* Swaps text to dark when background fills with teal */
+    transform: scale(1.075);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 15px;
+    }
+    
+    .product-image {
+        height: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}

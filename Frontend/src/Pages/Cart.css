@@ -1,0 +1,269 @@
+/* Cart.css - Shopping Cart Page Styles */
+
+/* Main container */
+.cart-container {
+    max-width: 1000px; /* Narrower than products page for better reading */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.cart-title {
+    color: hsl(180, 100%, 33%);
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* Empty cart / Login message */
+.cart-empty-message {
+    justify-content: center;
+    text-align: center;
+    padding: 30px auto;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 1.5rem;
+    color: hsl(0, 0%, 60%);
+}
+
+.cart-link {
+    display: inline-block;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.15s ease;
+}
+
+.cart-link:hover {
+    text-decoration: none;
+    color: var(--accent-hover);
+}
+
+.cart-link:active {
+    transform: scale(1.1);
+}
+
+/* Cart items list container */
+.cart-items {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0 20px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+}
+
+/* Individual cart item row */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.cart-item:last-child {
+    border-bottom: none; /* Removes the line from the last item */
+}
+
+/* Left side: image, name, price */
+.cart-item-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 2;
+    min-width: 250px;
+}
+
+.cart-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    background-color: var(--bg);
+}
+
+.cart-item-details {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.cart-item-details h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.2em;
+    color: hsl(180, 100%, 33%);
+}
+
+.cart-item-details p {
+    margin: 0;
+    color: hsl(0, 0%, 60%);
+    font-size: 0.95em;
+}
+
+/* Right side: quantity controls, subtotal, remove button */
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Quantity buttons container */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--bg);
+    padding: 5px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+}
+
+.quantity-controls span {
+    font-size: 1.1em;
+    min-width: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--text-muted);
+}
+
+.quantity-controls button {
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--text-muted);
+    border: none;
+    border-radius: calc(var(--radius) - 2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.quantity-controls button:hover:not(:disabled) {
+    background-color: var(--accent);
+    color: var(--text);
+}
+
+.quantity-controls button:active:not(:disabled) {
+    background-color: var(--accent-hover);
+    color: var(--bg);
+}
+
+.quantity-controls button:disabled {
+    opacity: 0.1;
+    cursor: not-allowed;
+}
+
+/* Item subtotal */
+.item-subtotal {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--text);
+    min-width: 80px;
+    text-align: right;
+}
+
+/* Remove button */
+.remove-btn {
+    background-color: transparent;
+    color: var(--danger);
+    border: 1px solid var(--danger);
+    padding: 8px 16px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.remove-btn:hover:not(:disabled) {
+    background-color: var(--danger);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.remove-btn:active:not(:disabled) {
+    transform: scale(1.2);
+}
+
+.remove-btn:disabled {
+    opacity: 0.1;
+    cursor: not-allowed;
+}
+
+/* Cart summary section (total and checkout) */
+.cart-summary {
+    text-align: right;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+}
+
+.cart-summary h2 {
+    font-size: 1.5em;
+    margin: 0 0 20px 0;
+    color: var(--text-muted);
+    font-weight: 400; /* Makes the word "Total" lighter */
+}
+
+.cart-total-price {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--text); /* Teal price */
+    margin-left: 10px;
+}
+
+/* Checkout button */
+.checkout-btn {
+    background-color: hsl(180, 100%, 10%);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 15px 40px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+    max-width: 300px;
+}
+
+.checkout-btn:hover {
+    background-color: var(--accent);
+    color: var(--text);
+    transform: scale(1.05);
+}
+
+.checkout-btn:active {
+    background-color: var(--accent-hover);
+    color: var(--bg);
+    transform: scale(1.1);
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .cart-item-controls {
+        width: 100%;
+        justify-content: space-between;
+        background-color: var(--bg);
+        padding: 15px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+    }
+    
+    .cart-summary {
+        text-align: center;
+    }
+}
