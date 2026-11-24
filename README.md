@@ -1,50 +1,53 @@
-🛍️ E-Commerce App Project
-A modern, full-stack ecommerce web application built with React, Express, and SQL.
+# 🛍️ E-Commerce App Project
 
-📖 About :
-Basic e-Commerce app for a small store
+A modern, full-stack ecommerce web application built with **React**, **Express**, and **SQL**.
 
-✨ Features:
-🛒 Persistent shopping cart
-👤 User authentication (sign up, login, password reset)
-💳 Secure checkout with [Stripe / PayPal / etc.] (Yet to be applied)
-📦 Order history and tracking
-📱 Fully responsive design
+---
 
-🛠 Tech Stack
-Layer	Technology
-Frontend	[React]
-Styling	[CSS]
-Backend	[Node.js/Express]
-Database	[PostgreSQL]
-Auth	[JWT/OAuth]
-Payments	[Stripe]
+## 📖 About
 
-🎬 Demo
-Live demo: (Yet to add)
+Basic ecommerce app for a small store.
 
-Demo credentials:
-Username - 'testuser'
-password - 'password123'
+---
 
-🚀 Getting Started
-# Install dependencies (FRONT)
-cd Frontend
-npm install
+## ✨ Features
 
-# Install dependencies (END)
-cd Backend
-npm install
+- 🛒 Persistent shopping cart
+- 👤 User authentication (sign up, login, password reset)
+- 💳 Secure checkout with [Stripe / PayPal / etc.] *(yet to be applied)*
+- 📦 Order history and tracking
+- 📱 Fully responsive design
 
-# Set up the database
-cd Backend/Routes
-node seed.js (Will have dummy values to work with you can edit)
+---
 
-🤝 Contributing
-Please follow the usual steps:
+## 🛠 Tech Stack
 
--Fork 
--Create a feature branch
--Commit changes
--Push to branch
--Open a Pull Request
+| Layer     | Technology         |
+|-----------|--------------------|
+| Frontend  | React              |
+| Styling   | CSS                |
+| Backend   | Node.js / Express  |
+| Database  | PostgreSQL         |
+| Auth      | JWT / OAuth        |
+| Payments  | Stripe             |
+
+---
+
+## 🎬 Demo
+
+- **Live demo:** *(yet to be added)*
+
+**Demo credentials:**
+
+- **Username:** `testuser`
+- **Password:** `password123`
+
+---
+
+## 🚀 Getting Started
+
+### 1. Install dependencies
+
+```bash
+cd Frontend/Backend
+npm install (on both)
